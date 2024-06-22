@@ -13,7 +13,9 @@ export default function Fruits() {
       <div>
         <ul>
           {fruits.map((fruit) => {
-            return <Fruit key={fruit.name} name={fruit.name} price={fruit.price} />;
+            return (
+              <Fruit key={fruit.name} name={fruit.name} price={fruit.price} />
+            );
           })}
         </ul>
       </div>
