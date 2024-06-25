@@ -1,27 +1,34 @@
 import { useState } from "react";
 
 export default function Form() {
-    const [name, setName] = useState("");
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+    });
 
     function handleChange(e) {
         const value = e.target.value;
-        setName(value);
+        setFormData(value);
     }
 
     return (
         <>
             <div>
+                {formData.firstName} {formData.lastName}
                 <form>
+                    <input
+                        type="text"
+                        // onChange={handleChange}
+                        onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                        value={formData.firstName}
+                    />
                     <input 
-                    type="text" 
-                    // onChange={handleChange} 
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}/>
+                        type="text" 
+                        onChange={(e) => setFormData({...formData, lastName: e.target.value})} 
+                        value={formData.lastName}
+                    />
                 </form>
             </div>
         </>
     );
 }
-
-
-// https://www.youtube.com/watch?v=5FDDoHI173g&list=PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza&index=26
