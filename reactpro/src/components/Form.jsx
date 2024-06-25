@@ -11,6 +11,11 @@ export default function Form() {
         setFormData(value);
     }
 
+    function formSubmitHandler(e) {
+        e.preventDefault(); // เมื่อให้มีการ refresh windows เมื่อมีการ submit form
+        console.log(`${formData.firstName} ${formData.lastName}`);
+    }
+
     return (
         <>
             <div>
@@ -27,6 +32,7 @@ export default function Form() {
                         onChange={(e) => setFormData({...formData, lastName: e.target.value})} 
                         value={formData.lastName}
                     />
+                    <button type="submit" onClick={formSubmitHandler}>Add</button>
                 </form>
             </div>
         </>
