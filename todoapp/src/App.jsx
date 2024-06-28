@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Todo from "./components/Todo";
+import Header from "./components/Header";
 import InlineComponent from "./components/InlineComponent";
 import OutlineComponent from "./components/OutlineComponent";
 
@@ -9,8 +10,12 @@ function App() {
 
     return (
         <>
-            <InlineComponent />
-            <OutlineComponent />
+            <div className="App">
+                <Header />
+                <Todo />
+            </div>
+            {/* <InlineComponent />
+            <OutlineComponent /> */}
         </>
     );
 }
