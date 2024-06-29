@@ -1,14 +1,25 @@
 .item {
     color: #353935;
     font-size: 20px;
-    text-align: center;
 }
 
 .itemName {
     font-weight: bold;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .line {
     border: 1px solid #d6d6d6;
+}
+
+.deleteBtn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #f7ca18;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
 }
