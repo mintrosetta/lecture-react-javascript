@@ -1,9 +1,14 @@
+import styles from './TodoItem.module.css';
+
 export default function TodoItem(props) {
     const { item } = props;
 
     return (
         <>
-            <h3>{item}</h3>
+            <div className={styles.item}>
+                <div className={styles.itemName}>{item}</div>
+                <hr className={styles.line} />
+            </div>
         </>
     );
 }
