@@ -3,12 +3,12 @@ import styles from "./Form.module.css";
 import { useState } from "react";
 
 export default function Form({ todos, setTodos }) {
-    const [todo, setTodo] = useState("");
+    const [todo, setTodo] = useState({ name: "", done: false });
 
     function formSubmitHandler(e) {
         e.preventDefault();
         setTodos([...todos, todo]); // เป็นแบบ asynchronous
-        setTodo("");
+        setTodo({name: "", done: false});
     }
 
     return (
@@ -17,8 +17,8 @@ export default function Form({ todos, setTodos }) {
                 <input
                     className={styles.modernInput}
                     type="text"
-                    onChange={(e) => setTodo(e.target.value)}
-                    value={todo}
+                    onChange={(e) => setTodo({...todo, name: e.target.value})}
+                    value={todo.name}
                     placeholder="enter todo item..."
                 />
                 <button className={styles.modernBtn} type="submit">

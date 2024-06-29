@@ -15,9 +15,9 @@ export default function TodoItem(props) {
         <>
             <div className={styles.item}>
                 <div className={styles.itemName}>
-                    {item}
+                    {item.name}
                     <span>
-                        <button onClick={() => deleteHandler(item)} className={styles.deleteBtn}>x</button>
+                        <button onClick={() => deleteHandler(item.name)} className={styles.deleteBtn}>x</button>
                     </span>
                 </div>
                 <hr className={styles.line} />
