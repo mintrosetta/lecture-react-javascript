@@ -7,7 +7,7 @@ export default function Form({ todos, setTodos }) {
 
     function formSubmitHandler(e) {
         e.preventDefault();
-        setTodos([...todos, todo]); // เป็นแบบ asynchronous
+        setTodos([todo, ...todos]); // เป็นแบบ asynchronous
         setTodo({name: "", done: false});
     }
 
