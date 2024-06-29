@@ -11,11 +11,22 @@ export default function TodoItem(props) {
         setTodos(newTodos);
     }
 
+    function nameClickHandler(itemName) {
+        console.log("Item click " + itemName)
+
+        let updatedTodos = todos.map((item) => item.name === itemName ? {...item, done: !item.done} : item);
+        setTodos(updatedTodos);
+    }
+
+    const className = item.done ? styles.completed : '';
+
     return (
         <>
             <div className={styles.item}>
                 <div className={styles.itemName}>
-                    {item.name}
+                    <span className={className} onClick={() => nameClickHandler(item.name)}>
+                        {item.name}
+                    </span>
                     <span>
                         <button onClick={() => deleteHandler(item.name)} className={styles.deleteBtn}>x</button>
                     </span>
