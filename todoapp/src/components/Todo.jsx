@@ -15,5 +15,3 @@ export default function Todo() {
         </>
     );
 }
-
-// https://www.youtube.com/watch?v=5lsHjUuD100&list=PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza&index=38
