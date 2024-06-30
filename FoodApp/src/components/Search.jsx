@@ -12,7 +12,7 @@ export default function Search({ foods, setFoods }) {
     useEffect(() => {
         async function fetchFood() {
             const response = await (await fetch(`${URL}?apiKey=${API_KEY}&query=${search}`)).json();
-            console.log(response.results);
+
             setFoods(response.results);
         }
         fetchFood();
