@@ -4,7 +4,7 @@ import { useState } from "react";
 const URL = 'https://api.spoonacular.com/recipes/complexSearch';
 const API_KEY = '342567d3ea164139a18fac0b0d51b2e0';
 
-export default function Search() {
+export default function Search({ foods, setFoods }) {
     const [search, setSearch] = useState("");
 
     // syntax of use effect hook
@@ -12,7 +12,8 @@ export default function Search() {
     useEffect(() => {
         async function fetchFood() {
             const response = await (await fetch(`${URL}?apiKey=${API_KEY}&query=${search}`)).json();
-            console.log(response);
+            console.log(response.results);
+            setFoods(response.results);
         }
         fetchFood();
     }, [search]);
