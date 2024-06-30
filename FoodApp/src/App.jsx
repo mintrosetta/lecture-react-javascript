@@ -2,6 +2,7 @@ import { useState } from "react";
 import Search from "./components/Search";
 import FoodList from "./components/FoodList";
 import Nav from "./components/Nav";
+import Container from "./components/Container";
 
 function App() {
   const [foods, setFoods] = useState([]);
@@ -10,7 +11,9 @@ function App() {
     <>
       <Nav />
       <Search foods={foods} setFoods={setFoods} />
-      <FoodList foods={foods} />
+      <Container>
+        <FoodList foods={foods} />
+      </Container>
     </>
   );
 }
